@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Build Pacman (Apple GLUT)",
+      "command": "clang++",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wno-deprecated",
+        "main.cpp",
+        "-framework", "GLUT",
+        "-framework", "OpenGL",
+        "-lpthread",
+        "-o", "pacman"
+      ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": ["$gcc"],
+      "group": { "kind": "build", "isDefault": true },
+      "detail": "Build with Apple GLUT (no XQuartz/FreeGLUT needed)"
+    }
+  ]
+}
